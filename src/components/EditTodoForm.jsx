@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { useDispatch } from "react-redux";
@@ -37,7 +38,13 @@ function EditTodoForm({ todo, setPopup }) {
   };
 
   return (
-    <div className="w-11/12 sm:w-9/12 md:w-6/12 h-80 bg-violet-500 flex flex-col p-2 rounded-md">
+    <motion.div
+      initial={{ y: -500 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      exit={{ y: -500 }}
+      className="w-11/12 sm:w-9/12 md:w-6/12 h-80 bg-violet-500 flex flex-col p-2 rounded-md"
+    >
       <div className="w-full flex justify-end">
         <FaTimes className="cursor-pointer" onClick={handleClosePopup} />
       </div>
@@ -89,7 +96,7 @@ function EditTodoForm({ todo, setPopup }) {
       >
         Add
       </button>
-    </div>
+    </motion.div>
   );
 }
 

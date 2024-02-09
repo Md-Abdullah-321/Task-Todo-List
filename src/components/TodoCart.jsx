@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo } from "../features/todoSlice";
@@ -28,7 +29,13 @@ function TodoCart({ todo }) {
     priorityColor = "text-gray-500";
   }
   return (
-    <div className="w-full h-full mt-1 shadow-sm">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 100 }}
+      transition={{ duration: 1 }}
+      exit={{ opacity: 0 }}
+      className="w-full h-full mt-1 shadow-sm"
+    >
       <div className="w-full border-violet-500 border-4 p-1 rounded-sm flex justify-between items-center">
         <div className="w-9/12">
           <h3 className="text-sm">
@@ -69,7 +76,7 @@ function TodoCart({ todo }) {
           <EditTodoForm todo={todo} setPopup={setPopup} />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
 
