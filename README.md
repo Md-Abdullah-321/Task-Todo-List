@@ -2,8 +2,6 @@
 
 Task Todo List is a simple yet powerful todo application built with React, Tailwind CSS, Redux, Redux Toolkit, and Framer Motion. It allows users to manage their tasks efficiently, including adding new tasks, editing existing tasks, marking tasks as completed, and deleting tasks. The application features a clean and user-friendly interface, responsive design, and local storage to persist tasks even if the user refreshes the page.
 
-![Task Todo List Preview](./preview.png)
-
 ## Features
 
 - Display a list of tasks with their respective status (completed or not completed).
